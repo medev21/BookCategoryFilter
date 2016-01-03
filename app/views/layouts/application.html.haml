@@ -6,4 +6,11 @@
   = javascript_include_tag 'application', 'data-turbolinks-track' => true
   = csrf_meta_tags
 %body
-  = yield
+  %nav.navbar.navbar-default
+    .container
+      .navbar-header
+        = link_to 'Book Demo', root_path, class: 'navbar-brand'
+      %ul.nav.navbar-nav.navbar-right
+        %li= link_to 'Add Book', new_book_path
+  .container
+    = yield
