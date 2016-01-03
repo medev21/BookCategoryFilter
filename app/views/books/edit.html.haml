@@ -1,3 +1,10 @@
 %h2 this is edit page
 
-= render 'form'
+-# = render 'form'
+
+= simple_form_for @book, :html => {:multipart => true} do |form|
+  = form.select :category_id, @categories
+  = form.input :title
+  = form.input :author
+  = form.input :description
+  = form.button :submit
