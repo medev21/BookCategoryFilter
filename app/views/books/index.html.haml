@@ -1,5 +1,8 @@
-%h1 this is the index view
+%h1.current-category= params[:category]
 
-- @books.each do |book|
-  -# %h2= book.title
-  %h2= link_to book.title , book_path(book)
+- if @books.count == 0
+  %h2 There are no books currently in this category
+- else
+  - @books.each do |book|
+    -# %h2= book.title
+    %h2= link_to book.title , book_path(book)
