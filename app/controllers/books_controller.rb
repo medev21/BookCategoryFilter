@@ -1,5 +1,5 @@
 class BooksController < ApplicationController
-  before_action :find_book
+  # before_action :find_book
 
   def index
   end
@@ -22,7 +22,7 @@ class BooksController < ApplicationController
       params.require(:book).permit(:title, :description, :author)
     end
 
-    def find_book
-      @book = Book.find(params[:id])
-    end
+    # def find_book
+    #   @book = Book.find(params[:id])
+    # end
 end
